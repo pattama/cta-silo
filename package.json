@@ -1,0 +1,38 @@
+{
+  "name": "cta-silo",
+  "version": "0.0.0",
+  "description": "",
+  "author": "CTA Team <cta@thomsonreuters.com>",
+  "contributors": [
+    "Adnane SAGHIR <adnane.saghir@thomsonreteurs.com>"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "_mocha test/index.js",
+    "codecoverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec && opener ./coverage/lcov-report/index.html",
+    "docs": "jsdoc --readme README.md lib -r -d docs && opener ./docs/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.sami.int.thomsonreuters.com:compass/cta-silo.git"
+  },
+  "engines": {
+    "node": "4.2.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.5",
+    "chai": "^3.4.0",
+    "chai-as-promised": "^5.1.0",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.9.0",
+    "istanbul": "^0.4.1",
+    "jsdoc": "^3.4.0",
+    "mocha": "^2.3.4"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "diskdb": "^0.1.14",
+    "shortid": "^2.2.4"
+  }
+}
