@@ -27,4 +27,11 @@ module.exports = function() {
     const res = this.silo.find({c: 3});
     assert.equal(res.length, 2);
   });
+
+  it('remove by _id', function() {
+    let res = this.silo.remove(global._id);
+    assert.equal(res, true);
+    res = this.silo.find(global._id);
+    assert.equal(res.length, 0);
+  });
 };
