@@ -2,12 +2,27 @@
 
 const tests = require('./inc/tests');
 const Silo = require('../lib');
+const os = require('os');
+const path = require('path');
 
-['memory', 'diskdb'].forEach(function(provider) {
-  describe(provider + ' provider', function() {
+const providers = [
+  {
+    title: 'nedb in-memory mode',
+    name: 'nedb',
+    options: null,
+  },
+  {
+    title: 'nedb persistent mode',
+    name: 'nedb',
+    options: os.tmpdir() + path.sep + 'test',
+  },
+];
+
+providers.forEach(function(provider) {
+  describe(provider.title, function() {
     before(function() {
-      this.silo = new Silo(provider);
-      this.silo.remove();
+      this.silo = new Silo(provider.name, provider.options);
+      this.silo.remove({});
     });
     tests();
   });
