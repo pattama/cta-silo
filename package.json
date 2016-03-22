@@ -32,6 +32,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "co": "^4.6.0",
     "nedb": "^1.7.2"
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const tests = require('./inc/tests');
-const Silo = require('../lib');
+const Silo = require('../lib/silo');
 const os = require('os');
 const path = require('path');
 
