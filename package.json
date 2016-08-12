@@ -34,5 +34,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "nedb": "^1.7.2"
+  },
+  "sourceDependencies": {
+    "cta-brick": "git@git.sami.int.thomsonreuters.com:compass/cta-brick.git"
   }
 }
