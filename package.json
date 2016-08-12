@@ -36,6 +36,6 @@
     "nedb": "^1.7.2"
   },
   "sourceDependencies": {
-    "cta-brick": "git@git.sami.int.thomsonreuters.com:compass/cta-brick.git"
+    "cta-brick": "git+ssh://git@git.sami.int.thomsonreuters.com:compass/cta-brick.git"
   }
 }
