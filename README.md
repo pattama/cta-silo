@@ -118,5 +118,3 @@ module.exports = {
 };
 ````
 
-See a full working sample in cta-io reporistory /samples/flowcontrol/silo
-
