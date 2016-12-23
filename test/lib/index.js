@@ -59,7 +59,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'backup',
       },
       payload: {
@@ -88,7 +88,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'restore',
       },
       payload: {
@@ -117,7 +117,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'clear',
       },
       payload: {
