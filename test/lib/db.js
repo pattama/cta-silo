@@ -30,6 +30,7 @@ describe('db', () => {
   describe('instantiation', () => {
     it('should reject when missing filename', (done) => {
       try {
+        // eslint-disable-next-line no-unused-vars
         const foo = new Db();
         done('should not be here');
       } catch (e) {
