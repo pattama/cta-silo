@@ -10,7 +10,7 @@ const filename = os.tmpdir() + path.sep + shortid.generate();
 
 const logger = {
   info: function info() {
-    console.log(arguments);
+    // console.log(arguments);
   },
 };
 
