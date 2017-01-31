@@ -59,7 +59,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'backup',
       },
       payload: {
@@ -69,7 +69,7 @@ describe('brick', () => {
     };
     const _emit = sinon.spy(context, 'emit');
     const _backup = sinon.spy(that.brick.db, 'backup');
-    return co(function* coroutine() {
+    co(function* coroutine() {
       yield that.brick.process(context);
       sinon.assert.calledWith(_backup, docs);
       const calls = _emit.getCalls()[0].args;
@@ -88,7 +88,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'restore',
       },
       payload: {
@@ -98,7 +98,7 @@ describe('brick', () => {
     };
     const _emit = sinon.spy(context, 'emit');
     const _restore = sinon.spy(that.brick.db, 'restore');
-    return co(function* coroutine() {
+    co(function* coroutine() {
       yield that.brick.process(context);
       sinon.assert.calledWith(_restore, context.data.payload.query);
       const calls = _emit.getCalls()[0].args;
@@ -117,7 +117,7 @@ describe('brick', () => {
     const context = new Context();
     context.data = {
       nature: {
-        type: 'document',
+        type: 'documents',
         quality: 'clear',
       },
       payload: {
@@ -127,7 +127,7 @@ describe('brick', () => {
     };
     const _emit = sinon.spy(context, 'emit');
     const _clear = sinon.spy(that.brick.db, 'clear');
-    return co(function* coroutine() {
+    co(function* coroutine() {
       yield that.brick.process(context);
       sinon.assert.calledWith(_clear, context.data.payload.query);
       sinon.assert.calledWith(_emit, 'done', 'silo', docs.length);
