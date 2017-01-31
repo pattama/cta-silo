@@ -10,7 +10,7 @@ const filename = os.tmpdir() + path.sep + shortid.generate();
 
 const logger = {
   info: function info() {
-    console.log(arguments);
+    // console.log(arguments);
   },
 };
 
@@ -30,6 +30,7 @@ describe('db', () => {
   describe('instantiation', () => {
     it('should reject when missing filename', (done) => {
       try {
+        // eslint-disable-next-line no-unused-vars
         const foo = new Db();
         done('should not be here');
       } catch (e) {
