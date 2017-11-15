@@ -1,26 +1,72 @@
-CTA-SILO
-========
+# cta-silo [ ![build status](https://git.sami.int.thomsonreuters.com/compass/cta-silo/badges/master/build.svg)](https://git.sami.int.thomsonreuters.com/compass/cta-silo/commits/master) [![coverage report](https://git.sami.int.thomsonreuters.com/compass/cta-silo/badges/master/coverage.svg)](https://git.sami.int.thomsonreuters.com/compass/cta-silo/commits/master)
 
-This brick provides a backup & restore utility for documents that transit in a flowcontrol application 
+Silo Modules for Compass Test Automation, One of Libraries in CTA-OSS Framework
 
-First refer to cta-brick and cta-flowcontrol repositories to familiarize yourself with those concepts.
+## General Overview
 
-Like all bricks, it can be easily injected into a flowcontrol application using a configuration
+### Overview
 
-# Brick dependencies
+The **cta-silo** provides a **local storage** to store data (documents). Currently, the **cta-silo** uses [**NeDB**](https://github.com/louischatriot/nedb), the _file-based_ **JavaScript Database**.
 
-none
+## Guidelines
 
-# Brick properties
+We aim to give you brief guidelines here.
 
-filename: path to a file for storage
+1. [Usage](#1-usage)
+1. [Configuration](#2-configuration)
+1. [Contracts](#3-contracts)
 
-# Brick contracts
+### 1. Usage
 
-| nature.type | nature.quality | payload sample
+**cta-silo** extends **Brick** (_cta-brick_). In order to use it, we need to provide a **configuration**. The **cta-silo** has **no dependencies**.
+
+```javascript
+const config = {
+  name: 'silo-01',
+  module: 'cta-silo',
+  properties: {
+    filename: `${__dirname}${path.sep}silo.db`,
+  },
+};
+```
+
+The data will _be stored_ in **silo.db** file.
+
+[back to top](#guidelines)
+
+### 2. Configuration
+
+The **configuration** requires **properties.filename**.
+
+```javascript
+const config = {
+  ...
+  properties: {
+    filename: `absolute/path/to/a/storage/file`,
+  },
+};
+```
+
+The **properties.filename** must be a filename with **absolute path**. The **properties** provide a configuration to **NeDB**.
+
+[back to top](#guidelines)
+
+### 3. Contracts
+
+| nature.type | nature.quality | payload
 | --- | --- | --- | ---
-| documents | backup | {doc: {foo: 'bar'}} or {doc: [{foo: 'bar'}, {bar: 'foo'}]} 
-| documents | restore | {query: {}, clear: true}
-| documents | clear | {query: {}}
+| documents | backup | { doc: { id: '01' } } or { doc: [ { id: '01' }, { id: '02' } ] } 
+| documents | restore | { query: {}, clear: true }
+| documents | clear | { query: {} }
 
-All payloads accept a callback function
+[back to top](#guidelines)
+
+------
+
+## To Do
+
+## Considerations
+
+#### Alternatives to NeDB are [leveldb](http://leveldb.org/) and [EJDB](http://ejdb.org/)
+
+------
