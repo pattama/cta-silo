@@ -67,6 +67,6 @@ The **properties.filename** must be a filename with **absolute path**. The **pro
 
 ## Considerations
 
-#### Alternatives to NeDB are leveldb and EJDB?
+#### Alternatives to NeDB are [leveldb](http://leveldb.org/) and [EJDB](http://ejdb.org/)
 
 ------
