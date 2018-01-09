@@ -1,4 +1,7 @@
-# cta-silo [ ![build status](https://git.sami.int.thomsonreuters.com/compass/cta-silo/badges/master/build.svg)](https://git.sami.int.thomsonreuters.com/compass/cta-silo/commits/master) [![coverage report](https://git.sami.int.thomsonreuters.com/compass/cta-silo/badges/master/coverage.svg)](https://git.sami.int.thomsonreuters.com/compass/cta-silo/commits/master)
+# cta-silo
+[![Build Status](https://travis-ci.org/thomsonreuters/cta-silo.svg?branch=master)](https://travis-ci.org/thomsonreuters/cta-silo)
+[![Coverage Status](https://coveralls.io/repos/github/thomsonreuters/cta-silo/badge.svg?branch=master)](https://coveralls.io/github/thomsonreuters/cta-silo?branch=master)
+[![codecov](https://codecov.io/gh/thomsonreuters/cta-silo/branch/master/graph/badge.svg)](https://codecov.io/gh/thomsonreuters/cta-silo)
 
 Silo Modules for Compass Test Automation, One of Libraries in CTA-OSS Framework
 
